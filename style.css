@@ -1,0 +1,8 @@
+p{
+  font-family: cursive
+}
+body{
+  color: black;
+  background-color: rgb(255, 195, 166);
+  //background-image: linear-gradient(to left, purple ,purple ,blue ,green ,yellow, orange ,red ,red);
+}
