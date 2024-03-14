@@ -119,18 +119,7 @@ function draw() {
     enemy6.position.x = width
   }
   if (keyDown(82)) {
-    player.position.x = width / 2
-    player.position.y = width / 2
-    playerSpeed = 5;
-    enemy1Speed = 1;
-    enemy2Speed = -2;
-    enemy3Speed = -3;
-    enemy4Speed = 1;
-    enemy5SpeedX = 2;
-    enemy5SpeedY = 2;
-    enemy6SpeedX = -3;
-    enemy6SpeedY = -3;
-    document.getElementById('score').innerHTML = 0;
+    restart();
   }
   if (keyDown(81) && keyDown(77)) {
     player.position.x = width / 2
@@ -196,6 +185,20 @@ function pause() {
     pauseCount = +1;
   }
 }
+function restart() {
+  player.position.x = width / 2
+  player.position.y = width / 2
+  playerSpeed = 5;
+  enemy1Speed = 1;
+  enemy2Speed = -2;
+  enemy3Speed = -3;
+  enemy4Speed = 1;
+  enemy5SpeedX = 2;
+  enemy5SpeedY = 2;
+  enemy6SpeedX = -3;
+  enemy6SpeedY = -3;
+  document.getElementById('score').innerHTML = 0;
+}
 function gameOver() {
   background(0, 0, 0)
   playerSpeed = 0;
@@ -208,4 +211,12 @@ function gameOver() {
   enemy6.velocity.x = 0;
   enemy6.velocity.y = 0;
   //document.getElementById('score').innerHTML = 0;
+  textSize(50);
+  fill('white');
+  text("Game Over!", 65, 150);
+  let restartButton = createButton('Play Again?');
+  restartButton.position(100, 300);
+  restartButton.mousePressed(() => {
+    restart();
+  });
 }
