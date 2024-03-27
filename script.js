@@ -214,9 +214,4 @@ function gameOver() {
   textSize(50);
   fill('white');
   text("Game Over!", 65, 150);
-  let restartButton = createButton('Play Again?');
-  restartButton.position(100, 300);
-  restartButton.mousePressed(() => {
-    restart();
-  });
 }
